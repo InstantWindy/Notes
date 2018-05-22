@@ -1,10 +1,10 @@
 [toc]
-##Python中的一些坑
-###scipy.misc
+## Python中的一些坑
+### scipy.misc
 1.  scipy.misc.imsave仅仅支持三种类型形状：MxN,MxNx3,MxNx4
 2.  misc.imread()默认读取出来的图像是三维的RGB
 ***
-###pytorch中的module
+### pytorch中的module
 1. 读取含有module的权重
 ```
 def convert_state_dict(state_dict):
