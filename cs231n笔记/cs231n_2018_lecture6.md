@@ -1,6 +1,7 @@
 # Training Neural Networks
 ## 激活函数
-![](Notes/cs231n笔记/pic/1.png)
+
+![](https://github.com/InstantWindy/Notes/edit/master/cs231n笔记/pic/1.png)
 ### Sigmoid
 1. **优点**
 	- 值的范围在[0,1]
