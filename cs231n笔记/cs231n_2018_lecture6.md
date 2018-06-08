@@ -35,7 +35,7 @@
 	- 计算效率高
 	- 收敛速度快
 	- 不会die
-![](/pic/2.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/2.png?raw=true)
 
 ### ELU
 1. **优点**
@@ -58,9 +58,9 @@
 4. 不要使用sigmoid
 
 ## 数据处理
-![](/pic/3.png)
-![](/pic/4.png)
-![](/pic/5.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/3.png?raw=true)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/4.png?raw=true)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/5.png?raw=true)
 
 1. **Cifar-10**
 	- 减去均值（mean image=[32,32,3] AlexNet)
@@ -68,22 +68,22 @@
 
 ## 权重初始化
 1. **小的随机数字**
-![](/pic/6.png)
-![](/pic/7.png)
-![](/pic/8.png)
-![](/pic/9.png)
-![](/pic/10.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/6.png?raw=true)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/7.png?raw=true)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/8.png?raw=true)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/9.png?raw=true)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/10.png?raw=true)
 
 ## Batch Normalization
 1. 为每一个维度计算均值和方差
 2. 使用在卷积层或者全连接层和激活层之间
-![](/pic/11.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/11.png?raw=true)
 3. **优点**
 	- 改善通过网络的梯度流动
 	- 允许可以有很高的学习率
 	- 可以减少对初始化的依赖
 	- 以一种有趣的方式表现出正则化的形式，并略微表现出来，可能会减少对dropout的需求
-![](/pic/12.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/12.png?raw=true)
 4. 测试的时候使用的是训练集的mean和std
 
 ## 训练过程
@@ -93,5 +93,5 @@
 4. 调整学习率让loss下降,如果出现loss出现nan意味着学习率过高
 5. 如果loss几乎不下降，学习率太低了
 5. 交叉验证
-![](/pic/13.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/13.png?raw=true)
 
