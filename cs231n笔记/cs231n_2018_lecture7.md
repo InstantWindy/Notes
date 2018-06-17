@@ -2,26 +2,26 @@
 ## Batch Normalization:Test Time
 1. **测试时使用的均值和方差是训练时的均值和方差**
 	- x:N x C x H x W,mu:1 x C x1 x1,则是沿着维度（0，2，3）
-![](H://1.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/22.png)
 2. **卷积和全连接层的Batch Normalization**
-![](H://2.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/23.png)
 
 3. **Layer Normalization**
 	- 层归一化在训练以及测试时间上表现出完全同样的计算能力
 	- 也能通过分别计算每一时间步骤上的归一化统计（ normalization statistics）直接应用于循环神经网络.
 	- x:N x D,batch norm是沿着维度0求均值，layer norm是沿着维度1
-![](H://3.png)
-![](H://4.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/24.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/25.png)
 
 4. **Instance Normalization**
 	- x：N x C x H x W，沿着维度（2，3）求均值
-![](H://5.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/26.png)
 5. **Group Normalization**	
 	- BatchNorm：batch方向做归一化，算N*H*W的均值
 	- LayerNorm：channel方向做归一化，算C*H*W的均值	
 	- InstanceNorm：一个channel内做归一化，算H*W的均值
 	- GroupNorm：将channel方向分group，然后每个group内做归一化，算(C//G)*H*W的均值
-![](H://6.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/27.png)
 
 ## 优化
 [各种优化方法总结](https://blog.csdn.net/luo123n/article/details/48239963)
@@ -33,14 +33,14 @@
 	- 鞍点很多更常见于高维度
 	- 其更新方向完全依赖于当前的batch，因而其更新十分不稳定。解决这一问题的一个简单的做法便是引入momentum
 	- momentum即动量，它模拟的是物体运动时的惯性，即更新的时候在一定程度上保留之前更新的方向，同时利用当前batch的梯度微调最终的更新方向。这样一来，可以在一定程度上增加稳定性，从而学习地更快，能够很好的解决鞍点和局部最小值的问题
-![](H://7.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/28.png)
 
 2. **一阶优化**
 	- 使用梯度形式的线性逼近
 	- 最小化近似值的步骤
 	- 一阶是梯度下降
 	- 由于二阶优化计算量过大，deeplearning一般采用一阶优化
-![](H://9.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/29.png)
 3. **二阶优化**	
 	- 使用梯度和Hessian形成二次近似
 	- 逐步逼近的最小值
@@ -59,11 +59,11 @@
 	- 学习利率下降的SGD +Momentum,通常比Adam变现的好一些，但需要更多调整
 	- 如果你能负担得起完整的批量更新，然后尝试L-BFGS（并且不要忘记禁用所有噪音源）
 
-![](H://10.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/30.png)
 
 ## 学习率更新
 
-![](H://8.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/41.png)
 
 ## 模型融合
 1. 训练多个独立的模型
@@ -75,21 +75,21 @@
 [Stochastic Depth Pytorch代码实现](https://zhuanlan.zhihu.com/p/31200098)
 
 1. **正则化**
-![](H://11.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/32.png)
 2. **dropout**
 	- 在测试的时候，所有神经元都是激活的
 	- 我们必须缩放激活，以便为每个神经元：output at test time = expected output at training time
-![](H://12.png)
-![](H://13.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/33.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/34.png)
 3. **添加随机噪音**
-![](H://14.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/35.png)
 4. **数据增强**
-![](H://15.png)
-![](H://16.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/36.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/37.png)
 5. 一个比较好的处理应该如下，训练加噪，测试去噪，中间加入examples的操作
-![](H：//17.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/38.png)
 
 ## 迁移学习
 1. 小数据集和大数据集的迁移学习
-![](H://18.png)
-![](H://19.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/39.png)
+![](https://github.com/InstantWindy/Notes/blob/master/cs231n%E7%AC%94%E8%AE%B0/pic/40.png)
